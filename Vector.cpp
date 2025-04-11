@@ -268,8 +268,10 @@ const ValueType& Vector::operator[](size_t idx) const
 
 long long Vector::find(const ValueType& value) const 
 {
-    for (size_t i = 0; i < _size; ++i) {
-        if (_data[i] == value) {
+    for (size_t i = 0; i < _size; ++i) 
+    {
+        if (_data[i] == value) 
+        {
             return i;
         }
     }
