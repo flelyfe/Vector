@@ -32,8 +32,14 @@ Vector& Vector::operator=(const Vector& other)
 }
 
 Vector::Vector(Vector&& other) noexcept
+: _data(other._data),
+      _size(other._size),
+      _capacity(other._capacity),
+      _multiplicativeCoef(other._multiplicativeCoef) 
 {
-    this*=std::move(other);
+    other._data = nullptr;
+    other._size = 0;
+    other._capacity = 0;
 }
 
 Vector& Vector::operator=(Vector&& other) noexcept 
